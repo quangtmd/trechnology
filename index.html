@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IQ Technology - Giải pháp IT toàn diện</title>
+  <style>
+    /* Reset cơ bản */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* --- Header --- */
+    header {
+      background: #00254d;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f04e31;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 600;
+      padding: 5px 8px;
+      transition: background 0.3s, color 0.3s;
+      border-radius: 3px;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #f04e31;
+      color: #fff;
+    }
+    .btn-cta {
+      background: #f04e31;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.3s;
+    }
+    .btn-cta:hover {
+      background: #d13f23;
+    }
+
+    /* --- Banner (Hero) --- */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 30px;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .hero .btn-hero {
+      background: #f04e31;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero .btn-hero:hover {
+      background: #d13f23;
+    }
+
+    /* --- Giới thiệu --- */
+    section.intro {
+      display: flex;
+      gap: 40px;
+      padding: 50px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    section.intro img {
+      flex: 1 1 350px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section.intro .content {
+      flex: 1 1 450px;
+    }
+    section.intro h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00254d;
+    }
+    section.intro p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #555;
+    }
+    section.intro .btn-more {
+      background: #f04e31;
+      color: white;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    section.intro .btn-more:hover {
+      background: #d13f23;
+    }
+
+    /* --- Dịch vụ nổi bật --- */
+    section.services {
+      background: #fff;
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    section.services h2 {
+      font-size: 2rem;
+      color: #00254d;
+      margin-bottom: 40px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 25px 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s;
+    }
+    .service-card:hover {
+      box-shadow: 0 4px 18px rgba(240, 78, 49, 0.3);
+    }
+    .service-icon {
+      font-size: 40px;
+      color: #f04e31;
+      margin-bottom: 15px;
+    }
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #00254d;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .service-card a {
+      color: #f04e31;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .service-card a:hover {
+      color: #d13f23;
+    }
+    .btn-view-all {
+      margin-top: 35px;
+      background: #f04e31;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-view-all:hover {
+      background: #d13f23;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      section.intro {
+        flex-direction: column;
+      }
+      section.intro img, section.intro .content {
+        flex: unset;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo" onclick="window.location='/'">IQ Technology</div>
+    <nav>
+      <ul>
+        <li><a href="/" class="active">Trang chủ</a></li>
+        <li><a href="/dich-vu">Dịch vụ</a></li>
+        <li><a href="/san-pham">Sản phẩm</a></li>
+        <li><a href="/giai-phap">Giải pháp</a></li>
+        <li><a href="/tin-tuc">Tin tức</a></li>
+        <li><a href="/lien-he">Liên hệ</a></li>
+      </ul>
+      <button class="btn-cta" onclick="window.location='/lien-he'">Đăng ký tư vấn</button>
+    </nav>
+  </header>
+
+  <!-- Banner Hero -->
+  <section class="hero">
+    <h1>Giải pháp IT toàn diện cho doanh nghiệp của bạn</h1>
+    <p>IQ Technology - Đối tác tin cậy trong lĩnh vực công nghệ thông tin</p>
+    <button class="btn-hero" onclick="document.querySelector('.services').scrollIntoView({behavior:'smooth'})">Tìm hiểu thêm</button>
+  </section>
+
+  <!-- Giới thiệu -->
+  <section class="intro">
+    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=600&q=80" alt="Đội ngũ IQ Technology" />
+    <div class="content">
+      <h2>Về chúng tôi</h2>
+      <p>
+        IQ Technology là đơn vị cung cấp dịch vụ CNTT với hơn 10 năm kinh nghiệm,
+        chuyên về bảo trì hệ thống, sửa chữa thiết bị, lắp đặt hạ tầng mạng cho doanh nghiệp.
+      </p>
+      <button class="btn-more" onclick="window.location='/gioi-thieu'">Xem thêm</button>
+    </div>
+  </section>
+
+  <!-- Dịch vụ nổi bật -->
+  <section class="services">
+    <h2>Dịch vụ của chúng tôi</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <h3>Sửa chữa máy tính tận nơi</h3>
+        <p>Kỹ thuật viên đến tận văn phòng trong vòng 2 giờ để khắc phục sự cố.</p>
+        <a href="/dich-vu/sua-chua-may-tinh">Xem chi tiết →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Thiết kế website doanh nghiệp</h3>
+        <p>Tạo giao diện chuyên nghiệp, chuẩn SEO, thân thiện người dùng.</p>
+        <a href="/dich-vu/thiet-ke-website">Xem chi tiết →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📡</div>
+        <h3>Thi công hạ tầng mạng LAN</h3>
+        <p>Kéo dây, cấu hình switch, setup IP mạng nội bộ cho doanh nghiệp.</p>
+        <a href="/dich-vu/ha-tang-mang-lan">Xem chi tiết →</a>
+      </div>
+    </div>
+    <button class="btn-view-all" onclick="window.location='/dich-vu'">Xem tất cả dịch vụ</button>
+  </section>
+
+</body>
+</html>
